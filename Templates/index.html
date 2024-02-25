@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Stock Price Predictor
+    </title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            color: aliceblue;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Stock Price Predictor</h1>
+    <div>
+        <form method = 'POST' action="/predict">
+            <textarea rows="12" cols="60" name="content" placeholder="Type or paste your Stock Symbol here">{{ stock }}</textarea>
+            <div>
+                <button type='submit'>
+                    Predict
+                </button>
+                <a href = '/'>Reset</a>
+            </div>
+        </form>
+    </div>
+    <div>
+        <p id="display">
+            
+            {{ prediction }}
+        </p>
+    </div>
+</body>
+
+</html>
