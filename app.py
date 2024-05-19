@@ -5,20 +5,11 @@ import Models.ARIMA, Models.lstm
 
 # Create an instance of the Flask class
 app = Flask(__name__)
-
-# # Register a route
-# @app.route('/', methods = ['GET', 'POST'])
-# def home():
-#     text = ''
-#     if request.method == 'POST':
-#         text = request.form.get('content', '')
-#         text = f"You entered: {text}"
-#     return render_template('index.html', text=text)
     
 ###
 @app.route('/')
 def home():
-    return render_template("t2.html")
+    return render_template("index.html")
 
 # @app.route("/predict", methods=['POST'])
 # def predict():
@@ -57,7 +48,7 @@ def predict():
             else:
                 prediction = "UNAVAILABLE - An error occurred: " + error_message
 
-    return render_template("t2.html", prediction=prediction, stock=stock)
+    return render_template("index.html", prediction=prediction, stock=stock)
 
 
 # Run the Flask application
